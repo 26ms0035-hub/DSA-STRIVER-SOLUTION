@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int linearSearch(vector<int>& nums, int target) {
+        int n=nums.size();
+        int j=0;
+        while(j<n){
+            if(nums[j]==target){
+                return j;
+            }
+            
+            j++;
+        }
+        return -1;
+    }
+};
