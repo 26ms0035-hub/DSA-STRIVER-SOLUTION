@@ -1,0 +1,43 @@
+
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode*temp1=headA;
+        ListNode*temp2=headB;
+        int L1=0;
+        int L2=0;
+        while(temp1!=NULL){//why this condition-what if very next node  is null
+            temp1=temp1->next;
+            L1++;
+        }
+        while(temp2!=NULL){
+            temp2=temp2->next;
+            L2++;
+        }
+    temp1=headA;
+    temp2=headB;
+    if (L1>L2){
+    int d=L1-L2;
+    for(int i=0;i<d;i++){
+        temp1=temp1->next;
+    }
+    while(temp1!=temp2){//why this condition?-what if common node  is 2nd node then this variable will not update
+        temp2=temp2->next;
+        temp1=temp1->next;
+    }
+    return temp2;
+    }
+    else {
+        int d=L2-L1;
+        for(int i=1;i<=d;i++){
+            temp2=temp2->next;
+        }
+        while(temp1!=temp2){
+            temp2=temp2->next;
+            temp1=temp1->next;
+        }
+        return temp2;
+    }
+        
+    }
+};
