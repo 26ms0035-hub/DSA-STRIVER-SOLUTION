@@ -1,1 +1,20 @@
+// iterative approach
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev=NULL;
+        ListNode*current=head;
+        ListNode*Next=NULL;
+        if(head==NULL){return 0;}
+        if (head->next==NULL){return head;}
+        while(current!=NULL){
+            Next=current->next;
+            current->next=prev;
+            prev=current;
+            current=Next;
 
+        }
+        return prev;
+        
+    }
+};
