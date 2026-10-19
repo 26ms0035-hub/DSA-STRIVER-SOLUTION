@@ -1,0 +1,29 @@
+# Approach one-but exceeding time limit on one case(geeksofgeeks)
+why-?
+vector<int> leaders(vector<int>& arr) {
+        // code here
+        int i=0;
+               int j=1;
+               int n=arr.size();
+               vector<int>nums;
+               while(i<j && i<n-1 ){
+                   if(arr[i]<arr[j]){
+                       i++;
+                       j=i;
+                   }
+                   else if(arr[i]>=arr[j]){
+                       if(j==n-1){
+                           nums.push_back(arr[i]);
+                           i++;
+                           j=i;
+                       }
+                   }
+                   j++;
+               }
+               nums.push_back(arr[n-1]);
+               return nums;
+
+
+           }
+# Approach 2-
+    
