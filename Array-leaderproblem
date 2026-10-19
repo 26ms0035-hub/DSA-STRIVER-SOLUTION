@@ -1,5 +1,5 @@
 # Approach one-but exceeding time limit on one case(geeksofgeeks)
-why-?
+why-?-repeated task which consuming time
 vector<int> leaders(vector<int>& arr) {
         // code here
         int i=0;
