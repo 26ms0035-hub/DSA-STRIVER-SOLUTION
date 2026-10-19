@@ -25,5 +25,24 @@ vector<int> leaders(vector<int>& arr) {
 
 
            }
-# Approach 2-
+# Approach 2-efficient due to we remove the repeated operation of traversing 
+previous element.by preserving previous information.
+vector<int> leaders(vector<int>& arr) {
+        // code here
+        vector<int>nums;
+        int n=arr.size();
+        int currmax=arr[n-1];
+        int j=n-2;
+    nums.push_back(arr[n-1]);
+        while(j>=0){
+            if(arr[j]>=currmax){
+                nums.push_back(arr[j]);
+                currmax=arr[j];
+            }
+            j--;
+        }
+        reverse(nums.begin(),nums.end());
+        return nums;
+        
+    }
     
